@@ -35,6 +35,7 @@ end
 =end
 
 # var2
+=begin
 puts "Введите название Вашего любимого языка."
 l = gets.chop
 res = ""
@@ -56,3 +57,24 @@ res = if l.downcase == "ruby"
 	  		end
 	  	end
 puts res
+=end
+
+# var3
+puts "Введите название Вашего любимого языка."
+l = gets.chop
+case l
+when "ruby"
+	puts "Вы подлиза!"
+else
+	case l
+	when "python"
+		puts "Ожидаемо!"
+	when "c#"
+		puts "Неплохо!"
+	when "c++"
+		puts "Хорошо!"
+	else
+		puts "..."
+	end
+	puts "Скоро будет ruby."
+end

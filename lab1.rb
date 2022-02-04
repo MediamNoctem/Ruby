@@ -10,6 +10,7 @@ puts "Здравствуйте, #{n}!"
 
 # 3
 # var1
+=begin
 puts "Введите название Вашего любимого языка."
 l = gets.chop
 
@@ -31,3 +32,27 @@ else
 	puts "Скоро будет ruby."
 	end
 end
+=end
+
+# var2
+puts "Введите название Вашего любимого языка."
+l = gets.chop
+res = ""
+res = if l.downcase == "ruby"
+		 "Вы подлиза!"
+	  else
+	  	if l.downcase == "python"
+	  		"Ожидаемо!\nСкоро будет ruby."
+	  	else
+	  		if l.downcase == "c#"
+	  			"Неплохо!\nСкоро будет ruby."
+	  		else
+	  			if l.downcase == "c++"
+	  				"Хорошо!\nСкоро будет ruby."
+	  			else
+	  				"...\nСкоро будет ruby."
+	  			end
+	  		end
+	  		end
+	  	end
+puts res

@@ -60,6 +60,7 @@ puts res
 =end
 
 # var3
+=begin
 puts "Введите название Вашего любимого языка."
 l = gets.chop
 case l
@@ -78,3 +79,13 @@ else
 	end
 	puts "Скоро будет ruby."
 end
+=end
+
+# 4
+puts "Введите команду Ruby:"
+a = gets.chop
+puts eval(a)
+
+puts "Введите команду ОС:"
+b = gets.chop
+puts(`#{b}`)

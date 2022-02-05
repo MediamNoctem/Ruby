@@ -281,3 +281,58 @@ end
 #puts maxElemList list
 #puts sumElemList list
 #puts multElemList list
+
+# 2
+def enterListFromKeyboard
+	list = []
+	print "Введите элемент списка: "
+	elem = gets
+		while elem != "\n" do
+				list.append(elem.to_i)
+				print "Введите элемент списка: "
+				elem = gets
+			end
+	return list
+end
+
+def enterListFromFile path
+	list = []
+	f = File.open(path)
+	f.each do |line|
+				list.append(line.to_i)
+	end
+	f.close
+	return list
+end
+	
+meth = ARGV[0].downcase
+enter = ARGV[1].downcase
+
+if enter == "file"
+	path = ARGV[2]
+end
+
+ARGV.clear
+
+case enter
+	when "keyboard"
+		list = enterListFromKeyboard
+	when "file"
+		list = enterListFromFile path
+	else
+			enter = ""
+			puts "Неизвестный способ ввода!"
+	end
+puts list
+if enter != ""
+		case meth
+			when "1"
+				puts "Минимальный элемент списка: " + (minElemList list).to_s
+			when "2"
+				puts "Максимальный элемент списка: " + (maxElemList list).to_s
+			when "3"
+				puts "Сумма элементов списка: " + (sumElemList list).to_s
+			when "4"
+				puts "Произведение элементов списка: " + (multElemList list).to_s
+	end
+end

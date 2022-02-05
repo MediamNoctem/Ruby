@@ -240,6 +240,7 @@ end
 
 # Exercise 3
 # 1
+=begin
 def minElemList list
 	min = list[0]
 	for i in 1...list.length
@@ -275,6 +276,7 @@ def multElemList list
 	end
 	return m
 end
+=end
 
 #list = [5,-5,9,-8,1]
 #puts minElemList list
@@ -283,6 +285,7 @@ end
 #puts multElemList list
 
 # 2
+=begin
 def enterListFromKeyboard
 	list = []
 	print "Введите элемент списка: "
@@ -335,4 +338,18 @@ if enter != ""
 			when "4"
 				puts "Произведение элементов списка: " + (multElemList list).to_s
 	end
+end
+=end
+
+# Exercise 4
+# 1.1
+
+def maxElemList list
+	max = list[0]
+	for i in 1...list.length
+		if max < list[i]
+			max = list[i]
+		end
+	end
+	return max
 end

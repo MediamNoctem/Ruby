@@ -353,3 +353,14 @@ def maxElemList list
 	end
 	return max
 end
+
+def findLastMaxList list
+	max = maxElemList list
+	size = list.length
+	for i in 0...size
+		if list[size - i] == max
+			return size - i
+		end
+	end
+	return -1
+end

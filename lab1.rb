@@ -192,6 +192,27 @@ def countOddDigitsOfNumMore3 n
 	return c
 end
 
+# Meth3
+def sumDigits n
+	n = n.abs
+	s = 0
+	while n > 0 do
+		s += n % 10;
+		n /= 10;
+	end
+	return s
+end
+
+def multDivOfNum n
+	m = 1
+	for i in 1...n
+		if n % i == 0 and (sumDigits i) < (sumDigits n)
+			m *= i
+		end
+	end
+	return m
+end
+
 c = ARGV[0]
 
 ARGV.clear
@@ -206,6 +227,9 @@ when "1"
 	puts "Сумма простых делителей числа: " + (sumPrimDiv n).to_s
 when "2"
 	puts "Количество нечетных цифр числа, больших 3: " + (countOddDigitsOfNumMore3 n).to_s
+when "3"
+	puts "Произведение таких делителей числа, сумма цифр которых
+		\nменьше, чем сумма цифр исходного числа: " + (multDivOfNum n).to_s
 when nil
 	puts "Hello world"
 else

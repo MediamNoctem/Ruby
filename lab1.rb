@@ -371,3 +371,13 @@ def countElemAfterLastMax list
 	indLastMax = findIndLastMaxList
 	return list.length - indLastMax - 1
 end
+
+def enterListFromFile path
+	list = []
+	f = File.open(path)
+	f.each do |line|
+		list.append(line.to_i)
+	end
+	f.close
+	return list
+end

@@ -94,6 +94,7 @@ puts(`#{b}`)
 
 # Exercise 2
 # 1
+=begin
 n = ARGV[0].to_i
 s = 0
 while n > 0 do
@@ -101,4 +102,17 @@ while n > 0 do
 	n /= 10;
 end
 puts s
+=end
 
+# 2
+def sumDigits n
+	s = 0
+	while n > 0 do
+		s += n % 10;
+		n /= 10;
+	end
+	return s
+end
+
+n = ARGV[0].to_i
+puts sumDigits n

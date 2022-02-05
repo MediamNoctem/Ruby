@@ -141,7 +141,18 @@ def maxDigit n
 	return max
 end
 
+def multDigits n
+	n = n.abs
+	m = 1
+	while n > 0 do
+		m *= (n % 10)
+		n /= 10
+	end
+	return m
+end
+
 n = ARGV[0].to_i
 puts "Сумма цифр числа: " + (sumDigits n).to_s
 puts "Минимальная цифра числа: " + (minDigit n).to_s
 puts "Максимальная цифра числа: " + (maxDigit n).to_s
+puts "Произведение цифр числа: " + (multDigits n).to_s

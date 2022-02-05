@@ -346,21 +346,26 @@ end
 
 def maxElemList list
 	max = list[0]
-	for i in 1...list.length
-		if max < list[i]
-			max = list[i]
+	list.each do |elem|
+		if max < elem
+			max = elem
 		end
 	end
 	return max
 end
 
-def findLastMaxList list
+def findIndLastMaxList list
 	max = maxElemList list
-	size = list.length
-	for i in 0...size
-		if list[size - i] == max
-			return size - i
+	list = list.reverse
+	i = list.length - 1
+	list.each do |elem|
+		if elem == max
+			return i
 		end
+		i -= 1
 	end
 	return -1
 end
+
+list = [5,0,1,2,1,5,0,11]
+puts findIndLastMaxList list

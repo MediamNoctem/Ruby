@@ -161,6 +161,7 @@ puts "Произведение цифр числа: " + (multDigits n).to_s
 
 # 3
 # Meth1
+=begin
 def isPrime n
 	for i in 2...n
 		if n % i == 0 
@@ -235,3 +236,19 @@ when nil
 else
 	puts "Неизвестная команда."
 end
+=end
+
+# Exercise 3
+# 1
+def minElemList list
+	min = list[0]
+	for i in 1...list.length
+		if min > list[i]
+			min = list[i]
+		end
+	end
+	return min
+end
+
+list = [5,7,8,0,1,9]
+puts minElemList list

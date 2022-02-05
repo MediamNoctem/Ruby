@@ -105,6 +105,7 @@ puts s
 =end
 
 # 2
+=begin
 def sumDigits n
 	n = n.abs
 	s = 0
@@ -156,3 +157,42 @@ puts "Сумма цифр числа: " + (sumDigits n).to_s
 puts "Минимальная цифра числа: " + (minDigit n).to_s
 puts "Максимальная цифра числа: " + (maxDigit n).to_s
 puts "Произведение цифр числа: " + (multDigits n).to_s
+=end
+
+# 3
+def isPrime n
+	for i in 2...n
+		if n % i == 0 
+			then return false
+		end
+	end
+	return true
+end
+
+def sumPrimDiv n
+	s = 0
+	for i in 1..n
+		if n % i == 0 and isPrime i
+			then s += i
+		end
+	end
+	return s
+end
+
+c = ARGV[0]
+
+ARGV.clear
+
+if c != nil and c!= ""
+	print "Введите n: "
+	n = (gets.chop).to_i
+end
+
+case c
+when "1"
+	puts "Сумма простых делителей числа: " + (sumPrimDiv n).to_s
+when nil
+	puts "Hello world"
+else
+	puts "Неизвестная команда."
+end

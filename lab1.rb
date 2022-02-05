@@ -250,5 +250,16 @@ def minElemList list
 	return min
 end
 
-list = [5,7,8,0,1,9]
-puts minElemList list
+def maxElemList list
+	max = list[0]
+	for i in 1...list.length
+		if max < list[i]
+			max = list[i]
+		end
+	end
+	return max
+end
+
+#list = [5,7,8,0,1,9, 100,500.1,-5000]
+#puts minElemList list
+#puts maxElemList list

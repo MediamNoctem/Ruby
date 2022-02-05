@@ -268,7 +268,16 @@ def sumElemList list
 	return s
 end
 
-#list = [5,-5,9,-8,0,1]
+def multElemList list
+	m = 1
+	for i in 0...list.length
+		m *= list[i]
+	end
+	return m
+end
+
+#list = [5,-5,9,-8,1]
 #puts minElemList list
 #puts maxElemList list
 #puts sumElemList list
+#puts multElemList list

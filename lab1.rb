@@ -367,5 +367,7 @@ def findIndLastMaxList list
 	return -1
 end
 
-list = [5,0,1,2,1,5,0,11]
-puts findIndLastMaxList list
+def countElemAfterLastMax list
+	indLastMax = findIndLastMaxList
+	return list.length - indLastMax - 1
+end

@@ -260,6 +260,15 @@ def maxElemList list
 	return max
 end
 
-#list = [5,7,8,0,1,9, 100,500.1,-5000]
+def sumElemList list
+	s = 0
+	for i in 0...list.length
+		s += list[i]
+	end
+	return s
+end
+
+#list = [5,-5,9,-8,0,1]
 #puts minElemList list
 #puts maxElemList list
+#puts sumElemList list

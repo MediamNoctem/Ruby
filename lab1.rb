@@ -105,7 +105,6 @@ puts s
 =end
 
 # 2
-=begin
 def sumDigits n
 	n = n.abs
 	s = 0
@@ -115,7 +114,6 @@ def sumDigits n
 	end
 	return s
 end
-=end
 
 def minDigit n
 	n = n.abs
@@ -130,7 +128,20 @@ def minDigit n
 	return min
 end
 
+def maxDigit n
+	n = n.abs
+	max = n % 10
+	n = n / 10
+	while n > 0 do
+		if max < (n % 10)
+			max = n % 10
+		end
+		n /= 10
+	end
+	return max
+end
 
 n = ARGV[0].to_i
 puts "Сумма цифр числа: " + (sumDigits n).to_s
 puts "Минимальная цифра числа: " + (minDigit n).to_s
+puts "Максимальная цифра числа: " + (maxDigit n).to_s

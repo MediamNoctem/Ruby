@@ -160,6 +160,7 @@ puts "Произведение цифр числа: " + (multDigits n).to_s
 =end
 
 # 3
+# Meth1
 def isPrime n
 	for i in 2...n
 		if n % i == 0 
@@ -179,11 +180,23 @@ def sumPrimDiv n
 	return s
 end
 
+# Meth2
+def countOddDigitsOfNumMore3 n
+	c = 0
+	while n > 0 do
+		if n % 2 != 0 and (n % 10) > 3
+			then c += 1
+		end
+		n /= 10
+	end
+	return c
+end
+
 c = ARGV[0]
 
 ARGV.clear
 
-if c != nil and c!= ""
+if c != nil
 	print "Введите n: "
 	n = (gets.chop).to_i
 end
@@ -191,6 +204,8 @@ end
 case c
 when "1"
 	puts "Сумма простых делителей числа: " + (sumPrimDiv n).to_s
+when "2"
+	puts "Количество нечетных цифр числа, больших 3: " + (countOddDigitsOfNumMore3 n).to_s
 when nil
 	puts "Hello world"
 else

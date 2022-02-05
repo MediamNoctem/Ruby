@@ -82,6 +82,7 @@ end
 =end
 
 # 4
+=begin
 puts "Введите команду Ruby:"
 a = gets.chop
 puts eval(a)
@@ -89,3 +90,15 @@ puts eval(a)
 puts "Введите команду ОС:"
 b = gets.chop
 puts(`#{b}`)
+=end
+
+# Exercise 2
+# 1
+n = ARGV[0].to_i
+s = 0
+while n > 0 do
+	s += n % 10;
+	n /= 10;
+end
+puts s
+

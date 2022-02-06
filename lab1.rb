@@ -535,5 +535,27 @@ def ex4_2_1 s
 	return k
 end
 
-s = "Hello@ @jkk"
-puts ex4_2_1 s
+# 2.9
+def ex4_2_9 s
+	reg = /[a-z]/
+	s1 = ""
+	s.each_char do |c|
+		if reg.match(c) != nil
+			s1 += c
+		end
+	end
+
+	if s1 == s1.reverse and s1 != ""
+		then puts "Строчные символы латиницы образуют палиндром."
+	else puts "Строчные символы латиницы не образуют палиндром."
+	end
+end
+
+s = "hello"
+s1 = "aadaa"
+s2 = "SDLada343DD<5"
+s3 = "FNJKENFKE"
+ex4_2_9 s
+ex4_2_9 s1
+ex4_2_9 s2
+ex4_2_9 s3

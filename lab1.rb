@@ -343,7 +343,6 @@ end
 
 # Exercise 4
 # 1.1
-
 def maxElemList list
 	max = list[0]
 	list.each do |elem|
@@ -368,8 +367,19 @@ def findIndLastMaxList list
 end
 
 def countElemAfterLastMax list
-	indLastMax = findIndLastMaxList
+	indLastMax = findIndLastMaxList list
 	return list.length - indLastMax - 1
+end
+
+# 1.13
+def minElemList list
+	min = list[0]
+	list.each do |elem|
+		if min > elem
+			min = elem
+		end
+	end
+	return min
 end
 
 def enterListFromFile path

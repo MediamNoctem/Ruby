@@ -342,7 +342,7 @@ end
 =end
 
 # Exercise 4
-
+=begin
 def enterListFromFile path
 	list = []
 	f = File.open(path)
@@ -521,3 +521,19 @@ end
 # C:\Users\romAn\OneDrive\Документы\GitHub\Ruby\file3-2.txt
 
 ex4_1
+=end
+
+# 2.1
+def ex4_2_1 s
+	k = 0
+	reg = /[а-яё]/
+	s.each_char do |c|
+		if reg.match(c) != nil
+			k += 1
+		end
+	end
+	return k
+end
+
+s = "Hello@ @jkk"
+puts ex4_2_1 s

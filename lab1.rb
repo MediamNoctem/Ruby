@@ -366,7 +366,6 @@ def enterListFromKeyboard
 end
 
 # 1.1
-=begin
 def maxElemList list
 	max = list[0]
 	list.each do |elem|
@@ -439,9 +438,8 @@ def ex4_1_37 ar
 			c += 1
 		end
 	end
-	puts "Количество чисел, которые меньше своего левого соседа: " + c.to_s
+	return c
 end
-=end
 
 # 1.49
 def isPrime n
@@ -464,3 +462,62 @@ def ex4_1_49 list
 	end
 	return l
 end
+
+# Ex4.1
+def ex4_1
+	puts "************************Методы************************"
+	puts "1. Найти количество элементов, расположенных после\nпоследнего максимального."
+	puts "2. Разместить элементы, расположенные до минимального,\nв конце массива."
+	puts "3. Необходимо найти максимальный из элементов в\nинтервале (a,b)."
+	puts "4. Вывести индексы элементов, которые меньше своего\nлевого соседа, и количество таких чисел."
+	puts "5. Для введенного списка положительных чисел\nпостроить список всех положительных простых делителей\nэлементов списка без повторений."
+	puts "******************************************************"
+	puts "Введите номер метода."
+	print "--> "
+	meth = gets.chop
+	puts meth
+	if ["1", "2", "3", "4", "5"].include?(meth)
+		then
+		puts "Введите, откуда нужно считать массив (file или keyboard)."
+		print "--> "
+		enter = gets.chop.downcase
+
+		case enter
+			when "file"
+				puts "Введите путь к файлу."
+				print "--> "
+				path = gets.chop
+				list = enterListFromFile path
+			when "keyboard"
+				list = enterListFromKeyboard
+			else
+				enter = ""
+				puts "Неизвестный способ ввода!"
+		end
+
+		if enter != ""
+			case meth
+				when "1"
+					puts "Количество элементов, расположенных после последнего максимального: " + (countElemAfterLastMax list).to_s
+				when "2"
+					puts "Разместить элементы, расположенные до минимального,в конце массива: " + (ex4_1_13 list).to_s
+				when "3"
+					print "Введите a: "
+					a = gets.to_i
+					print "Введите b: "
+					b = gets.to_i
+					puts "Максимальный из элементов в интервале (a,b): " + (ex4_1_25 list,a,b).to_s
+				when "4"
+					puts "Количество чисел, которые меньше своего левого соседа: " + (ex4_1_37 list).to_s
+				when "5"
+					puts "Список всех положительных простых делителей элементов списка без повторений: " + (ex4_1_49 list).to_s
+			end
+		end
+	else
+		puts "Неизвестный метод!"
+	end
+end
+
+# C:\Users\romAn\OneDrive\Документы\GitHub\Ruby\file3-2.txt
+
+ex4_1

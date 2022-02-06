@@ -381,3 +381,15 @@ def enterListFromFile path
 	f.close
 	return list
 end
+
+def enterListFromKeyboard
+	list = []
+	print "Введите элемент списка: "
+	elem = gets
+		while elem != "\n" do
+				list.append(elem.to_i)
+				print "Введите элемент списка: "
+				elem = gets
+			end
+	return list
+end

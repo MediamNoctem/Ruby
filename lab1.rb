@@ -342,6 +342,29 @@ end
 =end
 
 # Exercise 4
+
+def enterListFromFile path
+	list = []
+	f = File.open(path)
+	f.each do |line|
+		list.append(line.to_i)
+	end
+	f.close
+	return list
+end
+
+def enterListFromKeyboard
+	list = []
+	print "Введите элемент списка: "
+	elem = gets
+		while elem != "\n" do
+				list.append(elem.to_i)
+				print "Введите элемент списка: "
+				elem = gets
+			end
+	return list
+end
+
 # 1.1
 =begin
 def maxElemList list
@@ -388,29 +411,6 @@ def ex4_1_13 list
 	return list
 end
 
-def enterListFromFile path
-	list = []
-	f = File.open(path)
-	f.each do |line|
-		list.append(line.to_i)
-	end
-	f.close
-	return list
-end
-
-def enterListFromKeyboard
-	list = []
-	print "Введите элемент списка: "
-	elem = gets
-		while elem != "\n" do
-				list.append(elem.to_i)
-				print "Введите элемент списка: "
-				elem = gets
-			end
-	return list
-end
-=end
-
 # 1.25
 def ex4_1_25 ar,a,b
 	if a >= b or ar.empty?
@@ -427,4 +427,18 @@ def ex4_1_25 ar,a,b
 	else
 		return max
 	end
+end
+=end
+
+# 1.37
+def ex4_1_37 ar
+	c = 0
+	(ar.length - 1).times do |i|
+		if ar[i] > ar[i + 1] 
+			then
+			puts i + 1
+			c += 1
+		end
+	end
+	puts "Количество чисел, которые меньше своего левого соседа: " + c.to_s
 end

@@ -359,7 +359,7 @@ def countElemAfterLastMax list
 	indLastMax = list.rindex(max)
 	return list.length - indLastMax - 1
 end
-=end
+
 # 1.13
 def minElemList list
 	min = list[0]
@@ -408,4 +408,23 @@ def enterListFromKeyboard
 				elem = gets
 			end
 	return list
+end
+=end
+
+# 1.25
+def ex4_1_25 ar,a,b
+	if a >= b or ar.empty?
+		return 0
+	end
+	max = a
+	ar.each do |elem|
+		if max < elem and elem > a and elem < b
+			max = elem
+		end
+	end
+	if max == a
+		then return 0
+	else
+		return max
+	end
 end

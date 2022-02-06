@@ -428,7 +428,6 @@ def ex4_1_25 ar,a,b
 		return max
 	end
 end
-=end
 
 # 1.37
 def ex4_1_37 ar
@@ -442,3 +441,15 @@ def ex4_1_37 ar
 	end
 	puts "Количество чисел, которые меньше своего левого соседа: " + c.to_s
 end
+=end
+
+# 1.49
+def isPrime n
+	(n - 2).times do |i|
+		if n % (i + 2) == 0 
+			then return false
+		end
+	end
+	return true
+end
+

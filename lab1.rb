@@ -359,7 +359,7 @@ def countElemAfterLastMax list
 	indLastMax = list.rindex(max)
 	return list.length - indLastMax - 1
 end
-
+=end
 # 1.13
 def minElemList list
 	min = list[0]
@@ -373,23 +373,18 @@ end
 
 def ex4_1_13 list
 	min = minElemList list
-	indMin = list.index(min)
-	n = list.length
-	i = 0
-	while indMin != nil do
-		list1 = list[i...indMin]
-		list = list[0...i] + list[indMin...n]
-		list = list + list1
+	ind = list.rindex(min)
+	newList = []
 
-		i += 1
-		list1 = list[i...n]
-
-		indMin = if list1.index(min) != nil
-			then i + list1.index(min)
+	list1 = []
+	list.each_index do |i|
+		if i < ind and list[i] != min
+			list1 = list1.append(list[i])
 		else
-			nil
+			newList = newList.append(list[i])
 		end
 	end
+	list = newList + list1
 	return list
 end
 
@@ -414,4 +409,3 @@ def enterListFromKeyboard
 			end
 	return list
 end
-=end

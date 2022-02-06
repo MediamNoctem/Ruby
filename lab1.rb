@@ -343,6 +343,7 @@ end
 
 # Exercise 4
 # 1.1
+=begin
 def maxElemList list
 	max = list[0]
 	list.each do |elem|
@@ -353,21 +354,9 @@ def maxElemList list
 	return max
 end
 
-def findIndLastMaxList list
-	max = maxElemList list
-	list = list.reverse
-	i = list.length - 1
-	list.each do |elem|
-		if elem == max
-			return i
-		end
-		i -= 1
-	end
-	return -1
-end
-
 def countElemAfterLastMax list
-	indLastMax = findIndLastMaxList list
+	max = maxElemList list
+	indLastMax = list.rindex(max)
 	return list.length - indLastMax - 1
 end
 
@@ -425,3 +414,4 @@ def enterListFromKeyboard
 			end
 	return list
 end
+=end

@@ -453,3 +453,14 @@ def isPrime n
 	return true
 end
 
+def ex4_1_49 list
+	l = []
+	list.each do |elem|
+		elem.times do |i|
+			if elem % (i + 1) == 0 and isPrime (i + 1)
+				l |= [i + 1]
+			end
+		end
+	end
+	return l
+end

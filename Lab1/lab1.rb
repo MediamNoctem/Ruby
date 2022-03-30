@@ -591,3 +591,23 @@ end
 # puts (ex5_2 s).to_s
 
 # 2.1
+def ex5_2_1 s
+	s = s + ' '
+	max = (s.match(/[-]?((\d*\.\d*)|(\d+))/)).to_s.to_f
+	while num = s.match(/[-]?((\d*\.\d*)|(\d+))/)
+		num = num.to_s
+		s = s.sub num + ' ',''
+		num = num.to_f
+		if max < num
+			max = num
+		end
+	end
+	max
+end
+
+# s = '-300.0 -5.1 -300.01'
+# puts (ex5_2_1 s).to_s
+
+# 2.9
+
+

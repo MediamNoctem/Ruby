@@ -609,5 +609,36 @@ end
 # puts (ex5_2_1 s).to_s
 
 # 2.9
+def ex5_2_9 s
+	s = s + ' '
+	min = (s.match(/[-]?((\d*\.\d*)|(\d+))/)).to_s.to_f
+	while num = s.match(/[-]?((\d*\.\d*)|(\d+))/)
+		num = num.to_s
+		s = s.sub num + ' ',''
+		num = num.to_f
+		if min > num
+			min = num
+		end
+	end
+	min
+end
 
+# s = '-300.0 -5.1 -300.01'
+# puts (ex5_2_9 s).to_s
 
+# 2.18
+def ex5_2_18 s
+	n_max = s.match(/\d+/).to_s.length
+	while n = s.match(/\d+/)
+		n = n.to_s
+		s = s.sub n,''
+		n = n.length
+		if n_max < n
+			n_max = n
+		end
+	end
+	n_max
+end
+
+# s = '56465ddsda46848sdsd455 111'
+# puts (ex5_2_18 s).to_s

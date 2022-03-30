@@ -671,4 +671,25 @@ def ex5
 	end
 end
 
-ex5
+# ex5
+
+# Exercise 6
+# 1
+def enter_list_string_from_file path
+	list = []
+	f = File.open(path)
+	f.each do |line|
+		list.append(line)
+	end
+	f.close
+	list
+end
+
+def ex6_1
+	puts 'Введите путь к файлу.'
+	path = gets.chomp
+	s = enter_list_string_from_file path
+	s.sort!
+end
+
+puts ex6_1

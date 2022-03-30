@@ -523,8 +523,9 @@ end
 ex4_1
 =end
 
-# 2.1
-def ex4_2_1 s
+# Exercise 5
+# 1.1
+def ex5_1_1 s
 	k = 0
 	reg = /[а-яё]/
 	s.each_char do |c|
@@ -532,11 +533,11 @@ def ex4_2_1 s
 			k += 1
 		end
 	end
-	return k
+	k
 end
 
-# 2.9
-def ex4_2_9 s
+# 1.9
+def ex5_1_9 s
 	reg = /[a-z]/
 	s1 = ""
 	s.each_char do |c|
@@ -550,12 +551,43 @@ def ex4_2_9 s
 	else puts "Строчные символы латиницы не образуют палиндром."
 	end
 end
-
+=begin
 s = "hello"
 s1 = "aadaa"
 s2 = "SDLada343DD<5"
 s3 = "FNJKENFKE"
-ex4_2_9 s
-ex4_2_9 s1
-ex4_2_9 s2
-ex4_2_9 s3
+ex5_1_9 s
+ex5_1_9 s1
+ex5_1_9 s2
+ex5_1_9 s3
+=end
+
+# 1.18
+def ex5_1_18 s
+	a = []
+	while date = s.match(/(((0[1-9]|[1-2][0-9]|30|31)\.(0(1|3|5|7|8)|10|12|января|марта|мая|июля|августа|октября|декабря))|((0[1-9]|[1-2][0-9]|30)\.(0(4|6|9|11)|апреля|июня|сентября|ноября))|((0[1-9]|[1-2][0-9])\.(02|февраля)))\.(\d\d\d\d|\d\d\d|\d\d)/)
+		date = date.to_s
+		a.append date
+		s = s.sub date,''
+	end
+	a
+end
+
+# s = "30.02.2007"
+# puts (ex5_1_18 s).to_s
+
+# 2
+def ex5_2 s
+	a = []
+	while date = s.match(/(((0[1-9]|[1-2][0-9]|30|31) (января|марта|мая|июля|августа|октября|декабря))|((0[1-9]|[1-2][0-9]|30) (апреля|июня|сентября|ноября))|((0[1-9]|[1-2][0-9]) (февраля))) (\d\d\d\d|\d\d\d|\d\d)/)
+		date = date.to_s
+		a.append date
+		s = s.sub date,''
+	end
+	a
+end
+
+# s = "dfsdks29 февраля 2007sdfl33 декабря 9999"
+# puts (ex5_2 s).to_s
+
+# 2.1

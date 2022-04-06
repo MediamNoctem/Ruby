@@ -763,3 +763,21 @@ end
 
 # s = enter_list_string_from_file 'C:\Users\romAn\OneDrive\Documents\GitHub\Ruby\Lab1\file6-2.txt'
 # puts ex6_3_7 s
+
+# 6.10
+def ex6_3_10 list
+	list.sort_by { |line| ada line }
+end
+
+def ada s
+	k = 0
+	(s.length - 2).times do |start|
+		if s.slice(start, 3) == s.slice(start, 3).reverse
+      k += 1
+		end
+	end
+	k
+end
+
+s = enter_list_string_from_file 'C:\Users\romAn\OneDrive\Documents\GitHub\Ruby\Lab1\file6-3.txt'
+puts ex6_3_10 s

@@ -779,5 +779,38 @@ def ada s
 	k
 end
 
-s = enter_list_string_from_file 'C:\Users\romAn\OneDrive\Documents\GitHub\Ruby\Lab1\file6-3.txt'
-puts ex6_3_10 s
+# s = enter_list_string_from_file 'C:\Users\romAn\OneDrive\Documents\GitHub\Ruby\Lab1\file6-3.txt'
+# puts ex6_3_10 s
+
+def ex6_3
+	puts "************************Методы************************"
+	puts "Отсортировать строки:"
+	puts "1. В порядке увеличения разницы между средним количеством согласных и средним количеством гласных букв в строке"
+	puts "2. В порядке увеличения квадратичного отклонения среднего веса ASCII-кода символа строки от среднего веса ASCII-кода символа первой строки"
+	puts "3. В порядке увеличения разницы между количеством сочетаний «гласная-согласная» и «согласная-гласная» в строке"
+	puts "4. В порядке увеличения среднего количества «зеркальных» троек (например, «ada») символов в строке"
+	puts "******************************************************"
+	puts "Введите номер метода."
+	print "--> "
+	meth = gets.chomp
+	puts meth
+	if ["1", "2", "3", "4"].include?(meth)
+	then
+		puts "Введите путь к файлу:"
+		path = gets.chomp
+		s = enter_list_string_from_file path
+
+		case meth
+		when "1"
+			puts (ex6_3_1 s).to_s
+		when "2"
+			puts (ex6_3_4 s).to_s
+		when "3"
+			puts (ex6_3_7 s).to_s
+		else
+			puts (ex6_3_10 s).to_s
+		end
+	else
+		puts "До свидания!"
+	end
+end

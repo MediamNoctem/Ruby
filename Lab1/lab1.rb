@@ -703,9 +703,16 @@ def sort_list
 	yield
 end
 
-s = enter_list_string_from_file 'C:\Users\romAn\OneDrive\Documents\GitHub\Ruby\Lab1\file6-2.txt'
+# s = enter_list_string_from_file 'C:\Users\romAn\OneDrive\Documents\GitHub\Ruby\Lab1\file6-2.txt'
 # puts sort_by_number_word_in_line s
 # puts sort_list {s.sort_by {|line| line.length}}
 # puts sort_list {s.sort_by {|line| line.count ' '}}
 
+# 3
+# 6.1
+def ex6_3_1 list
+	list.sort_by {|line| 2 * line.count('аеёиоуыэюяaeiouy') - list.count('^`~!@#$%^&*()\|/"\',.;:№{[]}<>=+ 0123456789-')}
+end
 
+s = enter_list_string_from_file 'C:\Users\romAn\OneDrive\Documents\GitHub\Ruby\Lab1\file6-2.txt'
+puts ex6_3_1 s

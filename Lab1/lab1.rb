@@ -714,5 +714,27 @@ def ex6_3_1 list
 	list.sort_by {|line| 2 * line.count('аеёиоуыэюяaeiouy') - list.count('^`~!@#$%^&*()\|/"\',.;:№{[]}<>=+ 0123456789-')}
 end
 
+# s = enter_list_string_from_file 'C:\Users\romAn\OneDrive\Documents\GitHub\Ruby\Lab1\file6-2.txt'
+# puts ex6_3_1 s
+
+# 6.4
+def ex6_3_4 list
+	w1 = calc_aver_weight_char list[0]
+	list.sort_by { |line| ((calc_aver_weight_char line) - w1).abs }
+end
+
+def calc_aver_weight_char n
+	w = 0.0
+	n.each_byte do |b|
+		c = b.to_s(2)
+		c.length.times do |i|
+			if c[i] == '1'
+				w += 1
+			end
+		end
+	end
+	w / n.length
+end
+
 s = enter_list_string_from_file 'C:\Users\romAn\OneDrive\Documents\GitHub\Ruby\Lab1\file6-2.txt'
-puts ex6_3_1 s
+puts ex6_3_4 s

@@ -685,11 +685,27 @@ def enter_list_string_from_file path
 	list
 end
 
-def ex6_1
+def sort_by_line_length
 	puts 'Введите путь к файлу.'
 	path = gets.chomp
 	s = enter_list_string_from_file path
 	s.sort!
 end
 
-puts ex6_1
+# puts sort_by_line_length
+
+# 2
+def sort_by_number_word_in_line list
+	list.sort_by {|line| line.count ' '}
+end
+
+def sort_list
+	yield
+end
+
+s = enter_list_string_from_file 'C:\Users\romAn\OneDrive\Documents\GitHub\Ruby\Lab1\file6-2.txt'
+# puts sort_by_number_word_in_line s
+# puts sort_list {s.sort_by {|line| line.length}}
+# puts sort_list {s.sort_by {|line| line.count ' '}}
+
+

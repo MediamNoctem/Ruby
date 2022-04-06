@@ -711,7 +711,7 @@ end
 # 3
 # 6.1
 def ex6_3_1 list
-	list.sort_by {|line| 2 * line.count('аеёиоуыэюяaeiouy') - list.count('^`~!@#$%^&*()\|/"\',.;:№{[]}<>=+ 0123456789-')}
+	list.sort_by {|line| 2 * line.count('аеёиоуыэюяАЕЁИОУЫЭЮЯaeiouyAEIOUY') - list.count('^`~!@#$%^&*()\|/"\',.;:№{[]}<>=+ 0123456789-')}
 end
 
 # s = enter_list_string_from_file 'C:\Users\romAn\OneDrive\Documents\GitHub\Ruby\Lab1\file6-2.txt'
@@ -736,5 +736,30 @@ def calc_aver_weight_char n
 	w / n.length
 end
 
-s = enter_list_string_from_file 'C:\Users\romAn\OneDrive\Documents\GitHub\Ruby\Lab1\file6-2.txt'
-puts ex6_3_4 s
+# s = enter_list_string_from_file 'C:\Users\romAn\OneDrive\Documents\GitHub\Ruby\Lab1\file6-2.txt'
+# puts ex6_3_4 s
+
+# 6.7
+def ex6_3_7 list
+	list.sort_by { |line| a_b line }
+end
+
+def a_b s
+	k1 = 0
+	k2 = 0
+	s0 = s
+	while n = s0.match(/[aeiouy][bcdfghjklmnpqrstvwx]/i)
+		k1 += 1
+		n = n.to_s
+		s0 = s0.sub n,''
+	end
+	while n = s.match(/[bcdfghjklmnpqrstvwx][aeiouy]/i)
+		k2 += 1
+		n = n.to_s
+		s = s.sub n,''
+	end
+	k1 - k2
+end
+
+# s = enter_list_string_from_file 'C:\Users\romAn\OneDrive\Documents\GitHub\Ruby\Lab1\file6-2.txt'
+# puts ex6_3_7 s

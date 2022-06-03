@@ -1,0 +1,8 @@
+--- !ruby/object:Brand_list
+brand_list:
+- !ruby/object:Brand
+  name: Alfa Romeo
+- !ruby/object:Brand
+  name: BMW
+- !ruby/object:Brand
+  name: Mazda

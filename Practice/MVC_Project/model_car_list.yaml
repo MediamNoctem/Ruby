@@ -1,0 +1,18 @@
+--- !ruby/object:Model_car_list
+model_car_list:
+- !ruby/object:Model_car
+  name: Alfa Romeo 145
+- !ruby/object:Model_car
+  name: Alfa Romeo 146
+- !ruby/object:Model_car
+  name: BMW Gran Turismo
+- !ruby/object:Model_car
+  name: BMW M Roadster
+- !ruby/object:Model_car
+  name: BMW i3
+- !ruby/object:Model_car
+  name: Mazda 121
+- !ruby/object:Model_car
+  name: Mazda 3
+- !ruby/object:Model_car
+  name: Mazda Capella

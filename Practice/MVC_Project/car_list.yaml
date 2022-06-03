@@ -1,0 +1,27 @@
+--- !ruby/object:Car_list
+car_list:
+- !ruby/object:Car
+  brand: Alfa Romeo
+  model: Alfa Romeo 145
+  year_assembly: 2010
+  engine_type: 4
+  fuel_consumption: 6
+- !ruby/object:Car
+  brand: Alfa Romeo
+  model: Alfa Romeo 146
+  year_assembly: 2011
+  engine_type: 4
+  fuel_consumption: 6.9
+- !ruby/object:Car
+  brand: Mazda
+  model: Mazda 121
+  year_assembly: 2020
+  engine_type: 12
+  fuel_consumption: 6.3
+- !ruby/object:Car
+  brand: Mazda
+  model: Mazda Capella
+  year_assembly: 2021
+  engine_type: 12
+  fuel_consumption: 6.5
+choose_car: 1
